@@ -1,0 +1,27 @@
+<section id="services" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestros <span>Servicios</span></h2>
+        <p>Soluciones tecnológicas adaptadas a tus necesidades</p>
+      </div>
+      
+      <div class="services-grid">
+        <div *ngFor="let service of services" class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-{{service.icon}}"></i>
+          </div>
+          <h3>{{service.title}}</h3>
+          <p>{{service.description}}</p>
+          <a href="#contact" class="service-link">Saber más <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+      <div class="cta-container">
+        <div class="cta-content">
+          <h3>¿Listo para impulsar tu negocio con tecnología de vanguardia?</h3>
+          <p>Contacta con nuestro equipo hoy mismo y descubre cómo podemos ayudarte.</p>
+          <a href="#contact" class="btn btn-primary">Solicitar Información</a>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,57 @@
+<section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sobre <span>NovaTech</span></h2>
+        <p>Conoce más acerca de nuestra empresa y nuestra misión.</p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-image">
+          <img src="assets/images/about-removebg-preview.png" alt="Sobre NovaTech">
+        </div>
+        
+        <div class="about-text">
+          <h3>Impulsando la Innovación Tecnológica desde 2014</h3>
+          
+          <p>En NovaTech, nos dedicamos a proporcionar soluciones tecnológicas de vanguardia que ayudan a las empresas a alcanzar sus objetivos. Nuestra misión es transformar los desafíos empresariales en oportunidades a través de la innovación digital.</p>
+          
+          <p>Con un equipo de expertos apasionados por la tecnología y comprometidos con la excelencia, ofrecemos servicios personalizados que se adaptan a las necesidades específicas de cada cliente.</p>
+          
+          <div class="values">
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fa fa-rocket"></i>
+              </div>
+              <h4>Innovación</h4>
+              <p>Constantemente exploramos nuevas tecnologías y enfoques.</p>
+            </div>
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fa fa-handshake"></i>
+              </div>
+              <h4>Compromiso</h4>
+              <p>Nos comprometemos con el éxito de cada proyecto de nuestros clientes.</p>
+            </div>
+            
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fa fa-gem"></i>
+              </div>
+              <h4>Calidad</h4>
+              <p>Mantenemos los más altos estándares en cada solución que entregamos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-container">
+        <div class="stats">
+          <div *ngFor="let stat of stats" class="stat-item">
+            <h3>{{stat.value}}</h3>
+            <p>{{stat.label}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

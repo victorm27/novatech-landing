@@ -1,0 +1,139 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Ponte en <span>Contacto</span></h2>
+      <p>Estamos aquí para responder a tus consultas y ayudarte con tus proyectos</p>
+    </div>
+    
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Ubicación</h3>
+          <p>Calle 45 #12-34<br>Cali, Colombia</p>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+        <p>info&#64;novatech.com<br>soporte&#64;novatech.com</p>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3>Teléfono</h3>
+          <p>+57 323 234 567<br>+57 314 123 456</p>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>Horario</h3>
+          <p>Lunes - Viernes: 9:00 - 18:00<br>Sábado - Domingo: Cerrado</p>
+        </div>
+        
+        <div class="social-media">
+          <h3>Síguenos</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" class="social-icon"><i class='bx bxl-facebook-circle'></i></a>
+            <a href="https://twitter.com" class="social-icon"><i class='bx bxl-twitter'></i></a>
+            <a href="https://linkedin.com" class="social-icon"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://instagram.com" class="social-icon"><i class='bx bxl-instagram-alt' ></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <div *ngIf="success" class="alert alert-success">
+          ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo lo antes posible.
+        </div>
+        
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Nombre completo *</label>
+            <input 
+              type="text" 
+              id="name" 
+              formControlName="name" 
+              [ngClass]="{'invalid': submitted && f['name'].errors}"
+            >
+            <div *ngIf="submitted && f['name'].errors" class="error-message">
+              <span *ngIf="f['name'].errors['required']">El nombre es obligatorio</span>
+              <span *ngIf="f['name'].errors['minlength']">El nombre debe tener al menos 2 caracteres</span>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input 
+                type="email" 
+                id="email" 
+                formControlName="email" 
+                [ngClass]="{'invalid': submitted && f['email'].errors}"
+              >
+              <div *ngIf="submitted && f['email'].errors" class="error-message">
+                <span *ngIf="f['email'].errors['required']">El email es obligatorio</span>
+                <span *ngIf="f['email'].errors['email']">Introduce un email válido</span>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Teléfono</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                formControlName="phone" 
+                [ngClass]="{'invalid': submitted && f['phone'].errors}"
+              >
+              <div *ngIf="submitted && f['phone'].errors" class="error-message">
+                <span *ngIf="f['phone'].errors['pattern']">Introduce un número de teléfono válido</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="company">Empresa</label>
+            <input type="text" id="company" formControlName="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Asunto *</label>
+            <input 
+              type="text" 
+              id="subject" 
+              formControlName="subject" 
+              [ngClass]="{'invalid': submitted && f['subject'].errors}"
+            >
+            <div *ngIf="submitted && f['subject'].errors" class="error-message">
+              <span *ngIf="f['subject'].errors['required']">El asunto es obligatorio</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Mensaje *</label>
+            <textarea 
+              id="message" 
+              rows="5" 
+              formControlName="message" 
+              [ngClass]="{'invalid': submitted && f['message'].errors}"
+            ></textarea>
+            <div *ngIf="submitted && f['message'].errors" class="error-message">
+              <span *ngIf="f['message'].errors['required']">El mensaje es obligatorio</span>
+              <span *ngIf="f['message'].errors['minlength']">El mensaje debe tener al menos 10 caracteres</span>
+            </div>
+          </div>
+          
+          <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
